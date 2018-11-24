@@ -1,0 +1,12 @@
+<requests>
+<groupkt>
+<call>
+{
+     'baseUrl':"http://services.groupkt.com/country/get/iso2code/IN",
+     'headers':{
+          'Content-Type': 'application/JSON',
+          'method':'GET'
+          }
+    }
+</call></groupkt>
+</requests>
