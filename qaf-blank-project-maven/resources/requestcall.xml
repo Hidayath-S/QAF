@@ -12,6 +12,19 @@
     }
 </call>
 </groupkt>
+<getAllCountry>
+
+
+<call>
+{
+     'baseUrl':"http://services.groupkt.com/country/get/all",
+     'headers':{
+          'Content-Type': 'application/JSON',
+          'method':'GET'
+          }
+    }
+</call>
+</getAllCountry>
 <users>
 <call>
 {
