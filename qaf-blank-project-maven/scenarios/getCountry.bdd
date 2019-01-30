@@ -2,4 +2,5 @@ SCENARIO: First
 META-DATA: {'desc':'This is an example of scenario using QAF-BDD','groups':['SMOKE']}
 Given user requests 'groupkt.call'
 Then response should have status code '200'
+#And user requests 'users.call'
 END

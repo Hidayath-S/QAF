@@ -1,5 +1,7 @@
 <requests>
 <groupkt>
+
+
 <call>
 {
      'baseUrl':"http://services.groupkt.com/country/get/iso2code/IN",
@@ -8,5 +10,18 @@
           'method':'GET'
           }
     }
-</call></groupkt>
+</call>
+</groupkt>
+<users>
+<call>
+{
+     'baseUrl':"http://localhost:8081/users",
+     'headers':{
+          'Content-Type': 'application/JSON',
+          'method':'POST'
+          },
+          'body':"file:resources/usersReq.json"
+    }
+</call>
+</users>
 </requests>

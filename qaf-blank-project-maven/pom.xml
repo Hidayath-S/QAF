@@ -24,16 +24,7 @@
 		<maven.build.timestamp.format>dd_MMM_yyyy_hh_mm_aa</maven.build.timestamp.format>
 		<testng.report.title>QAF Demo</testng.report.title>
 	</properties>
-	<repositories>
-		<repository>
-			<id>qaf</id>
-			<url>https://qmetry.github.io/qaf/dist</url>
-		</repository>
-		<repository>
-			<id>jai</id>
-			<url>https://repository.jboss.org/nexus/content/repositories/thirdparty-releases</url>
-		</repository>
-	</repositories>
+	
 
 	<dependencies>
 	<dependency>
@@ -52,18 +43,27 @@
   			<version>2.1.14-RC1</version>
   		</dependency>
   		
-		<dependency>
-			<groupId>com.qmetry</groupId>
-			<artifactId>qaf</artifactId>
-			<version>${qaf.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.qmetry</groupId>
-			<artifactId>qaf-support</artifactId>
-			<version>${qaf.version}</version>
-		</dependency>
+		
 		<!-- https://mvnrepository.com/artifact/com.oracle/ojdbc14 -->
-
+<dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>fluent-hc</artifactId>
+      <version>4.5.1</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/au.com.dius/pact-jvm-consumer-junit -->
+    
+    <!-- https://mvnrepository.com/artifact/org.json/json -->
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20171018</version>
+    </dependency>
 		
 	</dependencies>
 	<build>
@@ -101,6 +101,7 @@
 					</systemPropertyVariables>
 				</configuration>
 			</plugin>
+			
 		</plugins>
 		<pluginManagement>
 			<plugins>
