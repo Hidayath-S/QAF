@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.qmetry</groupId>
-	<artifactId>qaf-blank-project-maven</artifactId>
+	<artifactId>QAF-API-Testing</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>qaf-blank-project-maven</name>
+	<name>QAF-API-Testing</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
