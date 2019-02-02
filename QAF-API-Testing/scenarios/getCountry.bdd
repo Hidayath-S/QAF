@@ -1,6 +1,7 @@
-SCENARIO: First 
+SCENARIO: To get country details by invoking getCountry API
 META-DATA: {'desc':'This is an example of scenario using QAF-BDD','groups':['SMOKE']}
-Given user requests 'groupkt.call'
-Then response should have status code '200'
-#And user requests 'users.call'
+Given get Todays date
+Then user requests 'getAllCountry.call'  
+AND response should have status code '200'
+AND say 'Country' is value at jsonpath '$.RestResponse.result[?(@.alpha2_code=="IN")].name'
 END

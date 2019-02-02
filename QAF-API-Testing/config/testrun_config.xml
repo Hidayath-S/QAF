@@ -1,24 +1,23 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-
- 
-
 <suite name="QAF Demo" verbose="0">
+<!-- 	<groups> -->
+<!-- 		<run> -->
+<!-- 			<include name="smoke"></include>  -->
+<!-- 		</run> -->
+<!-- 	</groups> -->
 	<test name="BDD Test" enabled="true">
-		<parameter name="scenario.file.loc" value="scenarios"/>
-              
-               <classes>
-                         <class name="com.qmetry.qaf.automation.step.client.text.BDDTestFactory"/>
-               </classes>
-               </test>
-	<!-- <test name="KWD Test" enabled="false">
+		<parameter name="scenario.file.loc" value="scenarios" />
+		<!-- <parameter name="step.provider.pkg" value="com.qmetry.qaf.example.steps" /> -->
 		<classes>
-			<class name="com.qmetry.qaf.automation.step.client.csv.KwdTestFactory"></class>
+			<class name="com.qmetry.qaf.automation.step.client.text.BDDTestFactory" />
 		</classes>
-	</test>-->
-	<test name="java Test" enabled="true">
+	</test>
+	<!-- <test name="KWD Test" enabled="false">
+	 <classes> <class name="com.qmetry.qaf.automation.step.client.csv.KwdTestFactory"></class> 
+		</classes> </test> -->
+	<test name="TestNG Test" enabled="true">
 		<classes>
 			<class name="com.qmetry.qaf.example.test.GetCountry"></class>
 		</classes>
 	</test>
-
 </suite>
