@@ -1,0 +1,10 @@
+SCENARIO: To get country details by invoking getCountry API
+META-DATA: {'desc':'This is an example of scenario using QAF-BDD',key="CreateModifyWire.data",'groups':['SMOKE']}
+#Given get Todays date
+Then user requests 'users.call'
+#AND response should have status code '200'
+#AND say 'Country' is value at jsonpath '$.RestResponse.result[?(@.alpha2_code=="IN")].name'
+And response should have value 'Duplicate payment found in GPO Database with the same : ApplId=${userID} and ApplPmtId = ${userID}.' at jsonpath '$.email'
+
+
+END
