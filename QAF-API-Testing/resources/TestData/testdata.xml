@@ -1,6 +1,7 @@
-<CreateModifyWire>
+<testdata><CreateModifyWire>
 	<data>
 		<ecn>123456789</ecn>
 		<acct>12345678</acct>
+		<userID>1003</userID>
 	</data>
-</CreateModifyWire>
+</CreateModifyWire></testdata>

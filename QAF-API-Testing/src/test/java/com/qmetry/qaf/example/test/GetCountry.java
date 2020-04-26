@@ -13,12 +13,22 @@ public class GetCountry {
 	@Test()
 	public void getCountry( ){
 		
-		WsStep.userRequests("getAllCountry.call");
+		WsStep.userRequests("groupkt.call");
 		
 		WsStep.responseShouldHaveStatusCode(200);
 		WsStep.sayValueAtJsonPath("Country", "$.RestResponse.result[?(@.alpha2_code=='IN')].name");
 		String countryName=ConfigurationManager.getBundle().getString("Country");
 		System.out.println("countryName="+countryName);
+		WsStep.userRequests("getAllCountry.call");
 	}
 
+//	
+//	@Test()
+//	//@QAFDataProvider(dataFile="C://Users//Hidayath//Desktop//POM.txt")
+//	public void testFile(){
+//		WsStep.userRequests("getAllCountry.call");
+//		
+//		
+//		
+//	}
 }

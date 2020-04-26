@@ -6,7 +6,7 @@
 <!-- 		</run> -->
 <!-- 	</groups> -->
 	<test name="BDD Test" enabled="true">
-		<parameter name="scenario.file.loc" value="scenarios" />
+		<parameter name="scenario.file.loc" value="scenarios\userDetails.bdd" />
 		<!-- <parameter name="step.provider.pkg" value="com.qmetry.qaf.example.steps" /> -->
 		<classes>
 			<class name="com.qmetry.qaf.automation.step.client.text.BDDTestFactory" />
@@ -15,9 +15,9 @@
 	<!-- <test name="KWD Test" enabled="false">
 	 <classes> <class name="com.qmetry.qaf.automation.step.client.csv.KwdTestFactory"></class> 
 		</classes> </test> -->
-	<test name="TestNG Test" enabled="true">
-		<classes>
-			<class name="com.qmetry.qaf.example.test.GetCountry"></class>
-		</classes>
-	</test>
+<!-- 	<test name="TestNG Test" enabled="true"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.qmetry.qaf.example.test.GetCountry"></class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
 </suite>

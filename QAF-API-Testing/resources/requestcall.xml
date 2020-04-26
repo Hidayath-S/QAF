@@ -21,19 +21,20 @@
      'headers':{
           'Content-Type': 'application/JSON',
           'method':'GET'
-          }
+          },
+          'body':"file:C:/Users/Hidayath/Desktop/POM.txt"
     }
 </call>
 </getAllCountry>
 <users>
 <call>
 {
-     'baseUrl':"http://localhost:8081/users",
+     'baseUrl':"https://localhost:8081/users/1003",
      'headers':{
           'Content-Type': 'application/JSON',
           'method':'POST'
-          },
-          'body':"file:resources/usersReq.json"
+          }
+          
     }
 </call>
 </users>
