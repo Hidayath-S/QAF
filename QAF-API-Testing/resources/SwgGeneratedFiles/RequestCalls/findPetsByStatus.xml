@@ -1,0 +1,11 @@
+<requests>
+ <findPetsByStatus> 
+ { 
+ 'baseUrl':'http://petstore.swagger.io/v2/pet/findByStatus?status=${status}', 
+ 'headers':{
+ 'Content-Type': 'application/JSON' 
+ },
+ 'method':GET,
+ } 
+ </findPetsByStatus> 
+ </requests>

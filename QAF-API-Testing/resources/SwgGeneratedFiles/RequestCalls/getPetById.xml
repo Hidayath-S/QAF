@@ -1,0 +1,11 @@
+<requests>
+ <getPetById> 
+ { 
+ 'baseUrl':'http://petstore.swagger.io/v2/pet/${petId}', 
+ 'headers':{
+ 'Content-Type': 'application/JSON' 
+ },
+ 'method':GET,
+ } 
+ </getPetById> 
+ </requests>

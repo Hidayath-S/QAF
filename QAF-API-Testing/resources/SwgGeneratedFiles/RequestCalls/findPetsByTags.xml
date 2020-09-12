@@ -1,0 +1,11 @@
+<requests>
+ <findPetsByTags> 
+ { 
+ 'baseUrl':'http://petstore.swagger.io/v2/pet/findByTags?tags=${tags}', 
+ 'headers':{
+ 'Content-Type': 'application/JSON' 
+ },
+ 'method':GET,
+ } 
+ </findPetsByTags> 
+ </requests>

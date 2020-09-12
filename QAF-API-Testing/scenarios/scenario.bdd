@@ -1,0 +1,3 @@
+SCENARIO: To get country details by invoking getCountry API 
+ META-DATA: {'desc':'This is an example of scenario using QAF-BDD','groups':['SMOKE']} 
+ END
