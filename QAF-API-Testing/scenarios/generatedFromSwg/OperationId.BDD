@@ -1,0 +1,6 @@
+SCENARIO: To test happy path scenario forOperationId  API
+META-DATA: {'desc':'This is an example of scenario using QAF-BDD','groups':['POSITIVE']}
+Given COMMENT: 'OperationId micro service is up and running' 
+When user requests 'OperationId'  
+Then response should have status code '200'
+END

@@ -41,7 +41,7 @@ import io.swagger.v3.oas.models.media.Schema;
 import io.swagger.v3.parser.OpenAPIV3Parser;
 import net.minidev.json.JSONArray;
 
-public class CreateRequestCall {
+public class ParseSwagger {
 
 	public static void writePathsToExcel(String swgFilePath, String excelFilePath) throws Exception {
 		Swagger swagger = new SwaggerParser().read(swgFilePath);
@@ -87,6 +87,8 @@ public class CreateRequestCall {
 		String envURL="http://"+swagger.getHost()+swagger.getBasePath();
 		System.out.println(envURL);
 		String XMLContent="";
+		String positive="";
+		String negative="";
 		
 		FileInputStream fileInputStream=new FileInputStream(excelFilePath);
 		XSSFWorkbook workbook=new XSSFWorkbook(fileInputStream);
@@ -102,6 +104,7 @@ public class CreateRequestCall {
 			//System.out.println(operationId);
 			String method=sheet.getRow(i).getCell(2).getStringCellValue();
 			//System.out.println(method);
+			String requestFilePath="resources/SwgGeneratedFiles/Definitions/"+sheet.getRow(i).getCell(3).getStringCellValue()+".json";
 			if(method.equalsIgnoreCase("GET")){
 				List<Parameter> params=swagger.getPath(path).getGet().getParameters();
 				for(int j=0;j<params.size();j++){
@@ -114,6 +117,7 @@ public class CreateRequestCall {
 						//System.out.println(envURL);
 						baseURL=baseURL.replace("{"+name+"}", "${"+name+"}");
 						//System.out.println(baseURL);
+						
 						XMLContent="<requests>\n <"+operationId +"> \n { \n 'baseUrl':'"+baseURL+ "', \n 'headers':{\n 'Content-Type': 'application/JSON' \n },\n 'method':"+method+ ",\n } \n </"+operationId+"> \n </requests>";
 					}
 					if(IN.equalsIgnoreCase("query")){
@@ -143,41 +147,42 @@ public class CreateRequestCall {
 				
 				
 			}
-//			if(method.equalsIgnoreCase("POST")){
-//				List<Parameter> params=swagger.getPath(path).getPost().getParameters();
-//				
-//				for(int j=0;j<params.size();j++){
-//					if(params.get(j).getIn().equalsIgnoreCase("body")){
-//						XMLContent="<requests>\n <"+operationId +"> \n { \n 'baseUrl':'"+baseURL+ "', \n 'headers':{\n 'Content-Type': 'application/JSON' \n },\n 'method':"+method+ ",\n'body':'file:' \n } \n </"+operationId+"> \n </requests>";
-//					}
-//				}
-//			}
-//			if(method.equalsIgnoreCase("PUT")){
-//				List<Parameter> params=swagger.getPath(path).getPut().getParameters();
-//				for(int j=0;j<params.size();j++){
-//					if(params.get(j).getIn().equalsIgnoreCase("body")){
-//						XMLContent="<requests>\n <"+operationId +"> \n { \n 'baseUrl':'"+baseURL+ "', \n 'headers':{\n 'Content-Type': 'application/JSON' \n },\n 'method':"+method+ ",\n 'body':'file:' \n } \n </"+operationId+"> \n </requests>";
-//					}
-//				}
-//			}
-//			if(method.equalsIgnoreCase("DELETE")){
-//				List<Parameter> params=swagger.getPath(path).getDelete().getParameters();
-//				for(int j=0;j<params.size();j++){
-//					if(params.get(j).getIn().equalsIgnoreCase("body")){
-//						XMLContent="<requests>\n <"+operationId +"> \n { \n 'baseUrl':'"+baseURL+ "', \n 'headers':{\n 'Content-Type': 'application/JSON' \n },\n 'method':"+method+ ", \n'body':'file:' \n } \n </"+operationId+"> \n </requests>";
-//					}
-//				}
-//			}
+			if(method.equalsIgnoreCase("POST")){
+				List<Parameter> params=swagger.getPath(path).getPost().getParameters();
+				
+				for(int j=0;j<params.size();j++){
+					if(params.get(j).getIn().equalsIgnoreCase("body")){
+						
+						XMLContent="<requests>\n <"+operationId +"> \n { \n 'baseUrl':'"+baseURL+ "', \n 'headers':{\n 'Content-Type': 'application/JSON' \n },\n 'method':"+method+ ",\n'body':'file:"+requestFilePath+"', \n } \n </"+operationId+"> \n </requests>";
+					}
+				}
+			}
+			if(method.equalsIgnoreCase("PUT")){
+				List<Parameter> params=swagger.getPath(path).getPut().getParameters();
+				for(int j=0;j<params.size();j++){
+					if(params.get(j).getIn().equalsIgnoreCase("body")){
+						XMLContent="<requests>\n <"+operationId +"> \n { \n 'baseUrl':'"+baseURL+ "', \n 'headers':{\n 'Content-Type': 'application/JSON' \n },\n 'method':"+method+ ",\n 'body':'file:"+requestFilePath+"', \n } \n </"+operationId+"> \n </requests>";
+					}
+				}
+			}
+			if(method.equalsIgnoreCase("DELETE")){
+				List<Parameter> params=swagger.getPath(path).getDelete().getParameters();
+				for(int j=0;j<params.size();j++){
+					if(params.get(j).getIn().equalsIgnoreCase("body")){
+						XMLContent="<requests>\n <"+operationId +"> \n { \n 'baseUrl':'"+baseURL+ "', \n 'headers':{\n 'Content-Type': 'application/JSON' \n },\n 'method':"+method+ ", \n'body':'file:"+requestFilePath+"', \n } \n </"+operationId+"> \n </requests>";
+					}
+				}
+			}
 			
 			
-				if(method.equalsIgnoreCase("GET")){
+				
 					
 					FileWriter writer= new FileWriter("resources\\SwgGeneratedFiles\\RequestCalls\\"+operationId+".xml");
 					writer.write(XMLContent);
 					writer.flush();
 					writer.close();
 					
-				}
+				
 			
 			//String XMLContent="<requests>\n <"+operationId +"> \n { \n 'baseUrl':'"+baseURL+ "', \n 'headers':{\n 'Content-Type': 'application/JSON' \n },\n 'method':"+method+ "\n } \n </"+operationId+"> \n </requests>";
 			
@@ -250,12 +255,10 @@ public class CreateRequestCall {
 		
 	}
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void generateDefinitions(String swaggerFilePath) throws Exception{
 		OpenAPI parser=new OpenAPIV3Parser().read(swaggerFilePath);
-		
-		
-Map<String, Schema> definitions=parser.getComponents().getSchemas();
-		
+		Map<String, Schema> definitions=parser.getComponents().getSchemas();		
 		for (Map.Entry<String, Schema> entry : definitions.entrySet()) {
 			Schema model=definitions.get(entry.getKey());
 			//System.out.println(entry.getKey());
@@ -265,7 +268,18 @@ Map<String, Schema> definitions=parser.getComponents().getSchemas();
 			io.swagger.v3.core.util.Json.mapper().registerModule(simpleModule);
 			String jsonExample=io.swagger.v3.core.util.Json.pretty(example);
 			//System.out.println("request for "+entry.getKey()+ " is ="+jsonExample);
-			
+//			JSONParser jsonParser=new JSONParser();
+//			JSONObject jsonObject=(JSONObject) jsonParser.parse(jsonExample);
+//			Set keys=jsonObject.keySet();
+//			Iterator key=keys.iterator();
+//			while(key.hasNext()){
+//				System.out.println("from "+entry.getKey()+" "+key.next());
+//				jsonObject.put(key.next(), "${"+key.next()+"}");
+//				String jsontoWrite=jsonObject.toJSONString();
+//				System.out.println(jsontoWrite);
+//				
+//				
+//			}
 			FileWriter writer= new FileWriter("resources\\SwgGeneratedFiles\\Definitions\\"+entry.getKey()+".json");
 			writer.write(jsonExample);
 			writer.flush();
@@ -297,23 +311,23 @@ Map<String, Schema> definitions=parser.getComponents().getSchemas();
 		for(int i=0;i<rowCount;i++){
 			String operationId=sheet.getRow(i).getCell(1).getStringCellValue();
 			String method=sheet.getRow(i).getCell(2).getStringCellValue();
-			String scenarioContent="SCENARIO: To test happy path scenario for"+operationId+"  API\r\n" + 
+			String scenarioContent="SCENARIO: To test happy path scenario for "+operationId+"  API\r\n" + 
 					"META-DATA: {'desc':'This is an example of scenario using QAF-BDD','groups':['POSITIVE']}\r\n" + 
 					"Given COMMENT: '"+operationId+ " micro service is up and running' \r\n" + 
 					"When user requests '"+operationId+"'  \r\n" + 
 					"Then response should have status code '200'\r\n" + 
 					"END\r\n" + 
 					"";
-			if(method.equalsIgnoreCase("GET")){
+			
 				FileWriter writer= new FileWriter("scenarios\\generatedFromSwg\\"+operationId+".BDD");
 				writer.write(scenarioContent);
 				writer.flush();
 				writer.close();
 				
-			}
+			
 			
 		}
-		
+		workbook.close();
 		
 		
 	}
@@ -330,8 +344,7 @@ Map<String, Schema> definitions=parser.getComponents().getSchemas();
 		generateDefinitions(swaggerFilePath);
 		createRequestCall(swaggerFilePath,excelSheetPath);
 		createQmetryScenario(excelSheetPath);
-		//getRefences(swaggerFilePath,excelSheetPath);
-		//generateDefReferences(swaggerFilePath, excelSheetPath);
+		
 
 		
 

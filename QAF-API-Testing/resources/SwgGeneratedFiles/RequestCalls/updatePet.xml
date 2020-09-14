@@ -1,0 +1,12 @@
+<requests>
+ <updatePet> 
+ { 
+ 'baseUrl':'http://petstore.swagger.io/v2/pet', 
+ 'headers':{
+ 'Content-Type': 'application/JSON' 
+ },
+ 'method':PUT,
+ 'body':'file:resources/SwgGeneratedFiles/Definitions/Pet.json', 
+ } 
+ </updatePet> 
+ </requests>

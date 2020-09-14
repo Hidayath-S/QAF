@@ -1,0 +1,12 @@
+<requests>
+ <addPet> 
+ { 
+ 'baseUrl':'http://petstore.swagger.io/v2/pet', 
+ 'headers':{
+ 'Content-Type': 'application/JSON' 
+ },
+ 'method':POST,
+'body':'file:resources/SwgGeneratedFiles/Definitions/Pet.json', 
+ } 
+ </addPet> 
+ </requests>
