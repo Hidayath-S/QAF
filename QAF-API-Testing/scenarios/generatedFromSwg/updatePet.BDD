@@ -1,6 +1,0 @@
-SCENARIO: To test happy path scenario forupdatePet  API
-META-DATA: {'desc':'This is an example of scenario using QAF-BDD','groups':['POSITIVE']}
-Given COMMENT: 'updatePet micro service is up and running' 
-When user requests 'updatePet'  
-Then response should have status code '200'
-END
