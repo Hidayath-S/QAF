@@ -1,4 +1,4 @@
-package com.first;
+package com.swagger.parser;
 
 
 
