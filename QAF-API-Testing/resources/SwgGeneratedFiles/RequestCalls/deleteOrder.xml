@@ -1,0 +1,11 @@
+<requests>
+ <deleteOrder> 
+ { 
+ 'baseUrl':'http://petstore.swagger.io/v2/store/order/${orderId}', 
+ 'headers':{
+ 'Content-Type': 'application/JSON' 
+ },
+ 'method':DELETE,
+ } 
+ </deleteOrder> 
+ </requests>

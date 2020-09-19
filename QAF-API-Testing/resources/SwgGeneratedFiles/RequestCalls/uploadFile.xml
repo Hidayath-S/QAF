@@ -1,0 +1,11 @@
+<requests>
+ <uploadFile> 
+ { 
+ 'baseUrl':'http://petstore.swagger.io/v2/pet/${petId}/uploadImage', 
+ 'headers':{
+ 'Content-Type': 'application/JSON' 
+ },
+ 'method':POST,
+ } 
+ </uploadFile> 
+ </requests>

@@ -1,0 +1,11 @@
+<requests>
+ <logoutUser> 
+ { 
+ 'baseUrl':'http://petstore.swagger.io/v2/user/logout', 
+ 'headers':{
+ 'Content-Type': 'application/JSON' 
+ },
+ 'method':GET,
+ } 
+ </logoutUser> 
+ </requests>

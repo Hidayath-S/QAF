@@ -1,0 +1,11 @@
+<requests>
+ <getInventory> 
+ { 
+ 'baseUrl':'http://petstore.swagger.io/v2/store/inventory', 
+ 'headers':{
+ 'Content-Type': 'application/JSON' 
+ },
+ 'method':GET,
+ } 
+ </getInventory> 
+ </requests>

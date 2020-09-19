@@ -1,0 +1,11 @@
+<requests>
+ <deleteUser> 
+ { 
+ 'baseUrl':'http://petstore.swagger.io/v2/user/${username}', 
+ 'headers':{
+ 'Content-Type': 'application/JSON' 
+ },
+ 'method':DELETE,
+ } 
+ </deleteUser> 
+ </requests>

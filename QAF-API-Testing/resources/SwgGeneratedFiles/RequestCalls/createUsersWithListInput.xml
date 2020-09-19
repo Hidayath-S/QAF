@@ -1,0 +1,12 @@
+<requests>
+ <createUsersWithListInput> 
+ { 
+ 'baseUrl':'http://petstore.swagger.io/v2/user/createWithList', 
+ 'headers':{
+ 'Content-Type': 'application/JSON' 
+ },
+ 'method':POST,
+'body':'file:User', 
+ } 
+ </createUsersWithListInput> 
+ </requests>

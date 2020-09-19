@@ -1,0 +1,12 @@
+<requests>
+ <placeOrder> 
+ { 
+ 'baseUrl':'http://petstore.swagger.io/v2/store/order', 
+ 'headers':{
+ 'Content-Type': 'application/JSON' 
+ },
+ 'method':POST,
+'body':'file:resources/SwgGeneratedFiles/Definitions/Order.json', 
+ } 
+ </placeOrder> 
+ </requests>

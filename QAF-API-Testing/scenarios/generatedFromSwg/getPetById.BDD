@@ -3,5 +3,5 @@ META-DATA: {'desc':'This is an example of scenario using QAF-BDD','groups':['POS
 Given COMMENT: 'getPetById micro service is up and running' 
 When user requests 'getPetById'  
 Then response should have status code '200'
-AND response has value '${status}' at jsonpath '$.status'
+AND response has value '${username}' at jsonpath '$.username'
 END

@@ -1,0 +1,12 @@
+<requests>
+ <updateUser> 
+ { 
+ 'baseUrl':'http://petstore.swagger.io/v2/user/${username}', 
+ 'headers':{
+ 'Content-Type': 'application/JSON' 
+ },
+ 'method':PUT,
+ 'body':'file:resources/SwgGeneratedFiles/Definitions/User.json', 
+ } 
+ </updateUser> 
+ </requests>

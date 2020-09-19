@@ -1,0 +1,12 @@
+<requests>
+ <createUsersWithArrayInput> 
+ { 
+ 'baseUrl':'http://petstore.swagger.io/v2/user/createWithArray', 
+ 'headers':{
+ 'Content-Type': 'application/JSON' 
+ },
+ 'method':POST,
+'body':'file:User', 
+ } 
+ </createUsersWithArrayInput> 
+ </requests>

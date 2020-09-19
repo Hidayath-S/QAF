@@ -1,0 +1,11 @@
+<requests>
+ <getUserByName> 
+ { 
+ 'baseUrl':'http://petstore.swagger.io/v2/user/${username}', 
+ 'headers':{
+ 'Content-Type': 'application/JSON' 
+ },
+ 'method':GET,
+ } 
+ </getUserByName> 
+ </requests>

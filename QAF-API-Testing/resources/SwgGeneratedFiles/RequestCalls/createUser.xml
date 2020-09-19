@@ -1,0 +1,12 @@
+<requests>
+ <createUser> 
+ { 
+ 'baseUrl':'http://petstore.swagger.io/v2/user', 
+ 'headers':{
+ 'Content-Type': 'application/JSON' 
+ },
+ 'method':POST,
+'body':'file:resources/SwgGeneratedFiles/Definitions/User.json', 
+ } 
+ </createUser> 
+ </requests>
