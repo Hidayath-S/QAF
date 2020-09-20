@@ -1,7 +1,14 @@
 SCENARIO: To test happy path scenario for getUserByName  API
-META-DATA: {'desc':'This is an example of scenario using QAF-BDD','groups':['POSITIVE']}
+META-DATA: {'desc':'This is an example of scenario using QAF-BDD','dataFile':'resources/TestData/petStoreTestData.csv','groups':['POSITIVE']}
 Given COMMENT: 'getUserByName micro service is up and running' 
 When user requests 'getUserByName'  
 Then response should have status code '200'
-AND response has value '${username}' at jsonpath '$.username'
+AND response has value '${firstName}' at jsonpath '$.firstName'
+ AND response has value '${lastName}' at jsonpath '$.lastName'
+ AND response has value '${password}' at jsonpath '$.password'
+ AND response has value '${userStatus}' at jsonpath '$.userStatus'
+ AND response has value '${phone}' at jsonpath '$.phone'
+ AND response has value '${id}' at jsonpath '$.id'
+ AND response has value '${email}' at jsonpath '$.email'
+ AND response has value '${username}' at jsonpath '$.username'
 END

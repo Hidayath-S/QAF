@@ -1,7 +1,12 @@
 SCENARIO: To test happy path scenario for getOrderById  API
-META-DATA: {'desc':'This is an example of scenario using QAF-BDD','groups':['POSITIVE']}
+META-DATA: {'desc':'This is an example of scenario using QAF-BDD','dataFile':'resources/TestData/petStoreTestData.csv','groups':['POSITIVE']}
 Given COMMENT: 'getOrderById micro service is up and running' 
 When user requests 'getOrderById'  
 Then response should have status code '200'
-AND response has value '${username}' at jsonpath '$.username'
+AND response has value '${petId}' at jsonpath '$.petId'
+ AND response has value '${quantity}' at jsonpath '$.quantity'
+ AND response has value '${id}' at jsonpath '$.id'
+ AND response has value '${shipDate}' at jsonpath '$.shipDate'
+ AND response has value '${complete}' at jsonpath '$.complete'
+ AND response has value '${status}' at jsonpath '$.status'
 END

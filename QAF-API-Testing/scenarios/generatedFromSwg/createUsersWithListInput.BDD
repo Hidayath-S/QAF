@@ -1,7 +1,0 @@
-SCENARIO: To test happy path scenario for createUsersWithListInput  API
-META-DATA: {'desc':'This is an example of scenario using QAF-BDD','groups':['POSITIVE']}
-Given COMMENT: 'createUsersWithListInput micro service is up and running' 
-When user requests 'createUsersWithListInput'  
-Then response should have status code '200'
-AND response has value '${username}' at jsonpath '$.username'
-END
