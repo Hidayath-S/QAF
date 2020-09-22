@@ -73,7 +73,7 @@ public class CreateBDDScenario {
 				}
 				pathValidationMethods=pathValidationMethods.substring(0, pathValidationMethods.lastIndexOf("]"));
 				String str1= "SCENARIO: To test happy path scenario for " + operationId + "  API\r\n"
-						+ "META-DATA: {'desc':'This is an example of scenario using QAF-BDD','dataFile':'resources/TestData/petStoreTestData.csv','groups':['POSITIVE']}\r\n"
+						+ "META-DATA: {'desc':'This is an example of scenario using QAF-BDD','groups':['POSITIVE']}\r\n"
 						+ "Given COMMENT: '" + operationId + " micro service is up and running' \r\n"
 						+ "When user requests '" + operationId + "'  \r\n"
 						+ "Then response should have status code '200'\r\n";

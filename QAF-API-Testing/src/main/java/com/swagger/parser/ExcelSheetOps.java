@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -51,8 +52,22 @@ public class ExcelSheetOps {
 				path = paths.getKey();
 				operationId = opsMap.getValue().getOperationId();
 				method = opsMap.getKey().name();
+				if(operationId==null&&method.equalsIgnoreCase("GET")){
+					operationId=paths.getValue().getGet().getSummary().replaceAll("\\s", "");
+				}
+				if(operationId==null&&method.equalsIgnoreCase("POST")){
+					operationId=paths.getValue().getPost().getSummary().replaceAll("\\s", "");
+				}
+				if(operationId==null&&method.equalsIgnoreCase("PUT")){
+					operationId=paths.getValue().getPut().getSummary().replaceAll("\\s", "");
+				}
+				if(operationId==null&&method.equalsIgnoreCase("DELETE")){
+					operationId=paths.getValue().getDelete().getSummary().replaceAll("\\s", "");
+				}
+				
 
 				String values = path + "," + operationId + "," + method;
+				//System.out.println(values);
 				finalList.add(values);
 
 			}
@@ -86,7 +101,7 @@ public class ExcelSheetOps {
 
 			}
 
-			//System.out.println(value[0] + value[1] + value[2]);
+			System.out.println(value[0] + value[1] + value[2]);
 		}
 		FileOutputStream fileOutputStream = new FileOutputStream(excelFilePath);
 		workbook.write(fileOutputStream);

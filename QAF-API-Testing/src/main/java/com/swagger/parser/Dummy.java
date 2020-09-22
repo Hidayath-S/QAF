@@ -23,8 +23,9 @@ public class Dummy {
 
 	public static void main(String[] args){
 		try{
-			Swagger swagger = new SwaggerParser().read("C:\\Users\\Hidayath\\Desktop\\yaml\\petStore\\swagger3.0\\petStore.json");
+			Swagger swagger = new SwaggerParser().read("C:\\Users\\Hidayath\\Desktop\\yaml\\uber.json");
 			System.out.println(swagger.getSwagger());
+			System.out.println(swagger.getPath("/products").getGet().getSummary());
 			
 			
 		}

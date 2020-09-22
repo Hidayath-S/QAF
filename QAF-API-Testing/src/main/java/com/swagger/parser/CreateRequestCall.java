@@ -79,7 +79,7 @@ public class CreateRequestCall {
 								
 								break;
 							case 1:
-							baseURL=baseURL+"&"+name+"="+"${"+name+"}";
+							baseURL=baseURL+"&amp;"+name+"="+"${"+name+"}";
 							break;
 
 							default:
@@ -139,7 +139,7 @@ public class CreateRequestCall {
 								
 								break;
 							case 1:
-							baseURL=baseURL+"&"+name+"="+"${"+name+"}";
+							baseURL=baseURL+"&amp;"+name+"="+"${"+name+"}";
 							break;
 
 							default:
@@ -193,7 +193,7 @@ public class CreateRequestCall {
 								
 								break;
 							case 1:
-							baseURL=baseURL+"&"+name+"="+"${"+name+"}";
+							baseURL=baseURL+"&amp;"+name+"="+"${"+name+"}";
 							break;
 
 							default:
@@ -247,7 +247,7 @@ public class CreateRequestCall {
 								
 								break;
 							case 1:
-							baseURL=baseURL+"&"+name+"="+"${"+name+"}";
+							baseURL=baseURL+"&amp;"+name+"="+"${"+name+"}";
 							break;
 
 							default:

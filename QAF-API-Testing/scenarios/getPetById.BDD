@@ -1,7 +1,7 @@
-SCENARIO: To test happy path scenario for findPetsByTags  API
-META-DATA: {'desc':'This is an example of scenario using QAF-BDD','dataFile':'resources/TestData/petStoreTestData.csv','groups':['POSITIVE']}
-Given COMMENT: 'findPetsByTags micro service is up and running' 
-When user requests 'findPetsByTags'  
+SCENARIO: To test happy path scenario for getPetById  API
+META-DATA: {'desc':'This is an example of scenario using QAF-BDD','groups':['POSITIVE']}
+Given COMMENT: 'getPetById micro service is up and running' 
+When user requests 'getPetById'  
 Then response should have status code '200'
 AND response has value '${photoUrls0}' at jsonpath '$.photoUrls[0]'
  AND response has value '${name}' at jsonpath '$.name'

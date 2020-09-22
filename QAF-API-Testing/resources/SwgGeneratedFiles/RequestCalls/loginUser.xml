@@ -1,7 +1,7 @@
 <requests>
  <loginUser> 
  { 
- 'baseUrl':'http://petstore.swagger.io/v2/user/login?username=${username}&password=${password}', 
+ 'baseUrl':'http://petstore.swagger.io/v2/user/login?username=${username}&amp;password=${password}', 
  'headers':{
  'Content-Type': 'application/JSON' 
  },
