@@ -101,7 +101,7 @@ public class ExcelSheetOps {
 
 			}
 
-			System.out.println(value[0] + value[1] + value[2]);
+			//System.out.println(value[0] + value[1] + value[2]);
 		}
 		FileOutputStream fileOutputStream = new FileOutputStream(excelFilePath);
 		workbook.write(fileOutputStream);

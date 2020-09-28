@@ -111,6 +111,12 @@
     <artifactId>jackson-databind</artifactId>
     <version>2.11.2</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/org.openapi4j/openapi-parser -->
+<dependency>
+    <groupId>org.openapi4j</groupId>
+    <artifactId>openapi-parser</artifactId>
+    <version>1.0.4</version>
+</dependency>
 
 
 
